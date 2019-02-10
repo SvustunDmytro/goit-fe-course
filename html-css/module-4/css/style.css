@@ -9,13 +9,7 @@
     src: url('./fonts/roboto-light.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-}  
-@font-face {
-    font-family: 'open-sans-bold';
-    src: url('./fonts/open-sans-bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}  
+}
 
 *{
     font-size: 0;
@@ -58,8 +52,9 @@ body {
 
 .menu {
     float: right;
-    font-family: 'open-sans-bold';
+    font-family: 'Open Sans', sans-serif;
     margin: 18px 0;
+    font-weight: 700;
 }
 
 ul {
