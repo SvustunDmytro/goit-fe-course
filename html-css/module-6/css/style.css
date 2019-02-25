@@ -204,6 +204,7 @@
 
 .foto-employee:hover {
     transform: translate(-10px, -10px);
+    transition: linear 200ms;
 }
 
 .foto-employee:hover .hover-box {
