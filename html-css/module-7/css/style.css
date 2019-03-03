@@ -181,11 +181,11 @@ a {
 }
 
 .form-text:valid {
-    outline: green;
+    outline: 3px solid green;
 }
 
 .form-text:invalid {
-    outline: red;
+    outline: 3px solid red;
 }
 
 .text {
