@@ -1,0 +1,212 @@
+@font-face {
+    font-family: 'WisdomScriptAJ';
+    src: url(../fonts/WisdomScriptAJ.eot) format('eot'),
+         url(../fonts/WisdomScriptAJ.woff) format('woff'),
+         url(../fonts/WisdomScriptAJ.ttf) format('ttf');
+        font-weight: normal;
+        font-style: normal;
+}
+
+@font-face {
+    font-family: 'Droid Serif';
+    src: url(../fonts/droidserifbolditalic.woff) format('woff'),
+         url(../fonts/droidserifbolditalic.woff2) format('woff2');
+        font-weight: normal;
+        font-style: italic;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    max-width: 940px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    min-width: 100%;
+    margin: 40px 0 120px;
+}
+
+.logo {
+    font-family: 'WisdomScriptAJ', serif;
+    width: 50%;
+    font-size: 26px;
+}
+
+.logo a {
+    color: #fed136;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 14px;
+    width: 50%;
+}
+
+.nav-item {
+    text-transform: uppercase;
+    color: #222;
+    display: flex;
+    align-items: center;
+}
+
+.nav-item:hover {
+    color: #fed136;
+}
+
+.header-1 {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 40px;
+    margin: 0 auto 75px;
+    text-align: center;
+    line-height: 1;
+    width: 100%;
+}
+
+.under-h1text {
+    font-family: 'Droid Serif';
+    font-size: 16px;
+    color: #777777;
+    text-transform: none;
+}
+
+.service-wrap {
+    display: flex;
+    min-width: 100%;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+
+.service-block {
+    display: flex;
+    max-width: 30.85%;
+    flex-wrap: wrap;
+    font-size: 18px;
+    height: 200px;
+}
+
+.service-item {
+    display: flex;
+    width: 100%;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.service-item:last-child {
+    font-family: 'Roboto Slab', serif;
+    font-size: 14px;
+    color: #777777;
+}
+
+.font-w {
+    font-weight: 700;
+}
+
+.contact-us {
+    padding-top: 100px;
+    background: #222;
+    background-image: url(../img/Map\ Image.png);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+}
+
+.form {
+    max-width: 100%;
+    margin: 0 auto;
+    padding-bottom: 100px;
+}
+
+.form h1 {
+    color: #fff;
+}
+
+.form-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item-wrapper {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    height: 225px;
+}
+
+.form-item {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.form-item:nth-child(2) {
+    align-items: center;
+}
+
+.form-item:last-child {
+    align-items: flex-end;
+}
+
+.form-item input {
+    width: 90%;
+    border-radius: 5px;
+    height: 50px;
+    font-weight: 700;
+}
+
+.form-text {
+    resize: none;
+    font-family: inherit;
+    height: 100%;
+    width: 100%;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;    
+    border-radius: 5px;
+    padding: 15px 20px;
+    box-sizing: border-box;
+}
+
+.form-text:valid {
+    outline: green;
+}
+
+.form-text:invalid {
+    outline: red;
+}
+
+.text {
+    height: 100%;
+}
+
+.form-action {
+    margin: 0 auto;
+    height: 65px;
+    margin-top: 30px;
+}
+
+.submit {
+    height: 100%;
+    width: 240px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    background: #fed136;
+    cursor: pointer;
+}
