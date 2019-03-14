@@ -1,0 +1,157 @@
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+[class*="col-"] {padding: 0; }
+
+.hero {
+    background-image: url(../img/Vector_Smart_Object_mobile.png);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    max-width: 940px;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    position: relative;
+    padding: 0;
+}
+
+.header {
+    position: absolute;
+    color: #fff;
+    z-index: 2;
+}
+
+.login {
+    margin: 30px 0 130px;
+}
+
+.login-item {
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 1px solid transparent;
+}
+
+.login-item:hover {
+    border-color: #fff;
+}
+
+.logo {
+    font-size: 20px;
+}
+
+.start {
+    margin: 250px 0 100px;
+}
+
+.header-1, .notification, .button{
+    text-align: center;
+}
+
+.header-1 {
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.notification {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding: 0 .5rem;
+}
+
+.button {
+    color: inherit;
+    background: #ff4e50;
+    padding: 15px 50px;
+    border: none;
+    border-radius: 30px;
+}
+
+.button:focus {
+    outline: none;
+}
+
+.meet {
+    font-size: 22px;
+    text-align: center;
+    margin: 70px 0 20px;
+}
+
+.partner {
+    margin-bottom: 30px;
+}
+
+.foto {
+    position: relative;
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.icon {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.name {
+    margin-bottom: 15px;
+}
+
+.hobby {
+    color: #8f8f8f;
+    font-family: 'Roboto', sans-serif;
+    padding: 0 .5rem;
+    text-align: center;
+}
+
+.partners button {
+    background: #fff;
+    color: #ff4e50;
+    border: 1px solid #ff4e50;
+    padding: 12px 50px;
+    cursor: pointer;
+    margin-bottom: 50px;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        background-image: url(../img/Vector_Smart_Object_tablet.png), linear-gradient(to right, rgba(9, 5, 47, .85) 0%, rgba(49, 29, 94, .85) 100%);
+    }
+    .login {
+        margin: 0;
+    }
+    .header {
+        margin-top: 30px;
+        padding: 0 15px;
+    }
+    .start {
+        margin: 180px 0 235px;
+    }
+    .header-1 {
+        font-size: 52px;
+    }
+    .notification {
+        font-size: 24px;
+    }
+    .button {
+        padding: 15px 25px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero {
+        background-image: url(../img/Vector_Smart_Object_laptop.png), linear-gradient(to right, rgba(9, 5, 47, .85) 0%, rgba(49, 29, 94, .85) 100%);
+    }
+}
