@@ -52,7 +52,7 @@ a:hover {
 }
 
 .start {
-    margin: 250px 0 100px;
+    padding: 250px 0 100px;
 }
 
 .header-1, .notification, .button{
@@ -86,7 +86,7 @@ a:hover {
 .meet {
     font-size: 22px;
     text-align: center;
-    margin: 70px 0 20px;
+    padding: 70px 0 20px;
 }
 
 .partner {
@@ -116,13 +116,16 @@ a:hover {
     text-align: center;
 }
 
+.button-container {
+    padding: 0 0 50px;
+}
+
 .partners button {
     background: #fff;
     color: #ff4e50;
     border: 1px solid #ff4e50;
     padding: 12px 50px;
     cursor: pointer;
-    margin-bottom: 50px;
 }
 
 @media (min-width: 768px) {
@@ -133,11 +136,10 @@ a:hover {
         margin: 0;
     }
     .header {
-        margin-top: 30px;
-        padding: 0 15px;
+        padding: 30px 15px 0;
     }
     .start {
-        margin: 180px 0 235px;
+        padding: 180px 0 235px;
     }
     .header-1 {
         font-size: 52px;
