@@ -212,11 +212,11 @@ ul {
     box-sizing: border-box;
 }
 
-.product-wrapper a:hover .product-name {
+.product-wrapper:hover .product-name {
     background: #1abc9c;
 }
 
-.product-wrapper a:hover .product-price {
+.product-wrapper:hover .product-price {
     background: #7fd9c7;
 }
 
