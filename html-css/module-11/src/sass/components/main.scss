@@ -1,0 +1,201 @@
+.service {
+    width: $width-full;
+
+    &__container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        margin-top: 50px;
+    }
+
+    &__item {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        width: 33.333%;
+        position: relative;
+        
+        &:nth-child(n+4) {
+            margin-top: 90px;
+        }
+    }
+
+    &__icon {
+        width: 33px;
+        height: 32px;
+    }
+}
+
+.secondary__title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: $width-full;
+    text-transform: uppercase;
+    color: inherit;
+    font-size: 30px;
+    text-align: center;
+    padding: 30px 0 0;
+}
+
+.title {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 24px;
+    text-transform: none;
+}
+
+.underline {
+    width: 60px;
+    background: #f38181;
+    height: 3px;
+    margin: 0 auto;
+}
+
+.icon__wrap {
+    padding: 0 27px;
+    fill: #95e1d3;
+}
+
+.item {
+    padding: 10px 27px 0 0;
+    font-family: 'Roboto', sans-serif;
+
+    &:first-child {
+        padding: 0;
+        text-transform: uppercase;
+    }
+
+    &:last-child {
+        color: #b3b3b3;
+        line-height: 1.5;
+    }
+}
+
+.text {
+    width: 85%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 40px;
+    color: #b3b3b3;
+}
+
+.our__employees {
+    margin: 90px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.employee {
+    width: 33.3333%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+
+        &__name {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+            width: $width-full;
+            text-align: center;
+            margin-top: 25px;
+        }
+}
+
+.name {
+    text-transform: uppercase;
+    width: $width-full;
+}
+
+.skill {
+    width: $width-full;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    color: #b3b3b3;
+    padding-top: 10px;
+}
+
+.hover__box {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $width-full;
+    height: 100%;
+    z-index: 19;
+}
+
+.foto__background {
+    background: #95e1d3;
+    height: 470px;
+}
+
+.foto__employee {
+    &:hover {
+        -webkit-transform: translate(-10px, -10px);
+            -ms-transform: translate(-10px, -10px);
+                transform: translate(-10px, -10px);
+        -webkit-transition: linear 200ms;
+        -o-transition: linear 200ms;
+        transition: linear 200ms;
+    }
+
+    &:hover .hover__box {
+        display: block;
+        background-image: -webkit-gradient( linear, left top, right top, from(rgba(252,227,138, 0.9)), to(rgba(243,129,129, 0.9)));
+        background-image: -webkit-linear-gradient( left, rgba(252,227,138, 0.9) 0%, rgba(243,129,129, 0.9) 100%);
+        background-image: -o-linear-gradient( left, rgba(252,227,138, 0.9) 0%, rgba(243,129,129, 0.9) 100%);
+        background-image: linear-gradient( 90deg, rgba(252,227,138, 0.9) 0%, rgba(243,129,129, 0.9) 100%);
+        position: absolute;
+    }
+}
+
+.icon_box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 60%;
+}
+
+.icons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: $primary-color;
+    text-align: center;
+    width: 55px;
+    height: 55px;
+    fill: #f38181;
+
+    &:hover {
+        background: #f38181;
+        fill: $primary-white-color;
+    }
+}
+
+.social__icon {
+    width: 25px;
+    height: 25px;
+}

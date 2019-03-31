@@ -1,0 +1,12 @@
+/*
+   Import partials below
+*/
+@import './helpers/variables';
+@import './normalize';
+
+// Components
+
+@import './components/wrapper';
+@import './components/header';
+@import './components/main';
+@import './components/footer';
