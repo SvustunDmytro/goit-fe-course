@@ -391,7 +391,7 @@ template {
 }
 
 .background {
-  background-image: url(/images/background_image.png);
+  background-image: url(../images/background_image.png);
   background-repeat: no-repeat;
 }
 
