@@ -10,7 +10,6 @@ if (userPassword === null) {
     message = 'Доступ запрещен, неверный пароль!';
 }
 
-console.log(message);
 alert(message);
 
 
@@ -22,15 +21,12 @@ let totalPrice;
 
 if (howMuchDoYouWantToBuy === null) {
     console.log('Отменено пользователем');
-} else if (howMuchDoYouWantToBuy != null) {
-    totalPrice = Number(howMuchDoYouWantToBuy) * pricePerDroid;
+} else {
+    totalPrice = howMuchDoYouWantToBuy * pricePerDroid;
     if(totalPrice > credits) {
         console.log('Недостаточно средств на счету!');
-        alert('Недостаточно средств на счету!');
     } else {
-        credits = Number(credits) - totalPrice;
-        console.log(`Вы купили ${howMuchDoYouWantToBuy} дроидов, на счету осталось ${credits} кредитов`);
-        alert(`Вы купили ${howMuchDoYouWantToBuy} дроидов, на счету осталось ${credits} кредитов`);
+        console.log(`Вы купили ${howMuchDoYouWantToBuy} дроидов, на счету осталось ${credits - totalPrice} кредитов`);
     }
 }
 
@@ -40,26 +36,29 @@ let southAmericaPrice = 250;
 let australiaPrice = 170;
 let indiaPrice = 80;
 let jamaicaPrice = 120;
-let title;
 
-switch (userCounty.toLowerCase()) {
+
+if (userCounty === null) {
+    console.log('В вашей стране доставка не доступна');
+} else {
+switch (userCounty.toLocaleLowerCase()) {
     case 'китай': 
-        title = `Доставка в ${userCounty} будет стоить ${chinaPrice} кредитов`;
+        console.log(`Доставка в ${userCounty} будет стоить ${chinaPrice} кредитов`);
         break;
     case 'южная америка': 
-        title = `Доставка в ${userCounty} будет стоить ${southAmericaPrice} кредитов`;
+        console.log(`Доставка в ${userCounty} будет стоить ${southAmericaPrice} кредитов`);
         break;
     case 'австралия':
-        title = `Доставка в ${userCounty} будет стоить ${australiaPrice} кредитов`;
+        console.log(`Доставка в ${userCounty} будет стоить ${australiaPrice} кредитов`);
         break;
     case 'индия':
-        title = `Доставка в ${userCounty} будет стоить ${indiaPrice} кредитов`;
+        console.log(`Доставка в ${userCounty} будет стоить ${indiaPrice} кредитов`);
         break;
     case 'ямайка':
-        title = `Доставка в ${userCounty} будет стоить ${jamaicaPrice} кредитов`;
+        console.log(`Доставка в ${userCounty} будет стоить ${jamaicaPrice} кредитов`);
         break;
     default: 
-        title = 'В вашей стране доставка не доступна';
+        console.log('В вашей стране доставка не доступна');
         break;
 }
-alert(title);
+}
