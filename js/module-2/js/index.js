@@ -6,7 +6,7 @@ while (true) {
     input = prompt('Enter number!');
     if  (input === null) {
         break;
-    } else if (isNaN(Number(input))) {
+    } else if (Number.isNaN(Number(input))) {
         continue;
     } else {
         numbers.push(Number(input));
@@ -28,10 +28,10 @@ while (attemptsLeft) {
     let userPassword = prompt('Enter password!');
     if (userPassword === null) {
         break;
-    } else if (passwords.includes(userPassword)) {
+    } if (passwords.includes(userPassword)) {
         alert('Добро пожаловать!');
         break;
-    } else if (userPassword !== null && attemptsLeft) {
+    } if (userPassword !== null && attemptsLeft) {
         attemptsLeft -= 1;
         if (!attemptsLeft) {
             alert('У вас закончились попытки, аккаунт заблокирован!');
