@@ -27,18 +27,23 @@ const Notepad = function Notepad(notes = []) {
       return this.findNoteById(id).priority = priority;
   };
   this.filterNotesByQuery = function(query) {
-    const filterByWord = this.notes.filter(function (note) {
+    const newNotes = [];
+      for (let note of this.notes) {
       const wordToLow = query.toLowerCase();
       const titleToLow = note.title.toLowerCase();
       const bodyToLow = note.body.toLowerCase();
-      return titleToLow.includes(wordToLow) || bodyToLow.includes(wordToLow);
-   })
-   return filterByWord;
+      if (titleToLow.includes(wordToLow) || bodyToLow.includes(wordToLow)) {
+        newNotes.push(note);
+      }}
+      return newNotes;
   };
   this.filterNotesByPriority = function(priority) {
-    return this.notes.filter(function (newPriority) {
-      return newPriority.priority === priority;
-    })
+    const newNotes = [];
+      for (let note of this.notes) {
+        if (note.priority === priority)
+        newNotes.push(note);
+      }
+      return newNotes;
   };
   // Перенеси свойства и методы объекта notepad в конструктор
 };
