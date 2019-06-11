@@ -11,35 +11,32 @@ class Notepad {
         HIGH: 2,
     };
     
-    get notes () {
+    get notes() {
         return this._notes;
     }
-    // getNotes = function() {
-    // return this.notes;
-    // };
-    findNoteById = function(id) {
+    findNoteById(id) {
     for (const note of this.notes) {
       if (note.id === id) {
         return note;
       }
     }
   };
-  saveNote = function(note) {
+  saveNote(note) {
     this.notes.push(note);
   };
-  deleteNote = function(id) {
+  deleteNote(id) {
     return this.notes.splice(this.notes.indexOf(this.findNoteById(id)),1);
   };
-  updateNoteContent = function(id, updatedContent) {
+  updateNoteContent(id, updatedContent) {
     const note = this.findNoteById(id);
     if (!note) return;
     Object.assign(note,updatedContent);
     return note;
   };
-  updateNotePriority = function(id, priority) {
+  updateNotePriority(id, priority) {
       return this.findNoteById(id).priority = priority;
   };
-  filterNotesByQuery = function(query) {
+  filterNotesByQuery(query) {
     const newNotes = [];
       for (let note of this.notes) {
       const wordToLow = query.toLowerCase();
@@ -50,7 +47,7 @@ class Notepad {
       }}
       return newNotes;
   };
-  filterNotesByPriority = function(priority) {
+  filterNotesByPriority(priority) {
     const newNotes = [];
       for (let note of this.notes) {
         if (note.priority === priority)
@@ -163,6 +160,3 @@ class Notepad {
    */
   notepad.deleteNote('id-2');
   console.log('Заметки после удаления с id -2: ', notepad.notes);
-  
-
-  console.log(notepad.notes);
