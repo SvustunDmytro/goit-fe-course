@@ -1,0 +1,189 @@
+'use strict';
+
+
+const PRIORITY_TYPES = {
+  LOW: 0,
+  NORMAL: 1,
+  HIGH: 2,
+};
+
+const ICON_TYPES = {
+  EDIT: 'edit',
+  DELETE: 'delete',
+  ARROW_DOWN: 'expand_more',
+  ARROW_UP: 'expand_less',
+};
+
+const NOTE_ACTIONS = {
+  DELETE: 'delete-note',
+  EDIT: 'edit-note',
+  INCREASE_PRIORITY: 'increase-priority',
+  DECREASE_PRIORITY: 'decrease-priority',
+};
+
+class Notepad {
+  constructor (
+      initialNotes
+  ) {
+      this._notes = initialNotes;
+  }
+  
+  get notes() {
+      return this._notes;
+  }
+  findNoteById(id) {
+  for (const note of this.notes) {
+    if (note.id === id) {
+      return note;
+    }
+  }
+  };
+  saveNote(note) {
+  this.notes.push(note);
+  };
+  deleteNote(id) {
+  return this.notes.splice(this.notes.indexOf(this.findNoteById(id)),1);
+  };
+  updateNoteContent(id, updatedContent) {
+  const note = this.findNoteById(id);
+  if (!note) return;
+  Object.assign(note,updatedContent);
+  return note;
+  };
+  updateNotePriority(id, priority) {
+    return this.findNoteById(id).priority = priority;
+  };
+  filterNotesByQuery(query) {
+  const newNotes = [];
+    for (let note of this.notes) {
+    const wordToLow = query.toLowerCase();
+    const titleToLow = note.title.toLowerCase();
+    const bodyToLow = note.body.toLowerCase();
+    if (titleToLow.includes(wordToLow) || bodyToLow.includes(wordToLow)) {
+      newNotes.push(note);
+    }}
+    return newNotes;
+  };
+  filterNotesByPriority(priority) {
+  const newNotes = [];
+    for (let note of this.notes) {
+      if (note.priority === priority)
+      newNotes.push(note);
+    }
+    return newNotes;
+  };
+  createListItem(note) {
+    let noteOfNotes = note;
+    let el = document.createElement('li');
+    el.classList.add('note-list__item');
+    el.setAttribute('data-id', noteOfNotes.id);
+    let noteWrapp = document.createElement('div');
+    noteWrapp.classList.add('note');
+    el.append(noteWrapp);
+    let noteContent = this.createNoteContent(noteOfNotes);
+    noteWrapp.append(noteContent);
+    let footer = this.createNoteFooter(noteOfNotes);
+    noteWrapp.append(footer);
+    return el;
+  };
+  createNoteContent(noteOfNotes) {
+    let noteContent = document.createElement('div');
+    noteContent.classList.add('note__content');
+    let noteTitle = document.createElement('h2');
+    noteTitle.classList.add('note__title');
+    noteTitle.textContent = `${noteOfNotes.title}`;
+    noteContent.append(noteTitle);
+    let noteBody = document.createElement('p');
+    noteBody.classList.add('note__body');
+    noteBody.textContent = `${noteOfNotes.body}`;
+    noteContent.append(noteBody);
+    return noteContent;
+  };
+  createNoteFooter(noteOfNotes) {
+    let footer = document.createElement('footer');
+    footer.classList.add('note__footer');
+    let noteSection = document.createElement('section');
+    noteSection.classList.add('note__section');
+    footer.append(noteSection);
+    let iconText = 'expand_more';
+    let iconText2 = 'expand_less';
+    let noteAction = 'decrease-priority';
+    let noteAction2 = 'increase-priority';
+    let btn = this.createActionButton(iconText, noteAction);
+    noteSection.append(btn);
+    let btn2 = this.createActionButton(iconText2, noteAction2);
+    noteSection.append(btn2);    
+    let notePriority = document.createElement('span');
+    notePriority.classList.add('note__priority');
+    notePriority.textContent = `${noteOfNotes.priority}`;
+    noteSection.append(notePriority);
+    let noteSection2 = document.createElement('section');
+    noteSection2.classList.add('note__section');
+    footer.append(noteSection2);
+    let iconText3 = 'edit';
+    let iconText4 = 'delete';
+    let noteAction3 = 'edit-note';
+    let noteAction4 = 'delete-note';
+    let btn3 = this.createActionButton(iconText3, noteAction3);
+    noteSection2.append(btn3);
+    let btn4 = this.createActionButton(iconText4, noteAction4);
+    noteSection2.append(btn4);  
+    return footer;
+  };
+  createActionButton(iconText, noteAction) {
+    let btn = document.createElement('button');
+    btn.classList.add('action');
+    btn.setAttribute('data-action', `${noteAction}`);
+    let icon = document.createElement('i');
+    icon.classList.add('material-icons', 'action__icon');
+    icon.textContent = `${iconText}`;
+    btn.append(icon);
+    return btn;
+  }
+  renderNoteList(listRef, notes) {
+    for (const note of notes) {
+      noteList.append(this.createListItem(note));
+    }
+    return noteList;
+  }
+}
+
+const initialNotes = [
+  {
+    id: 'id-1',
+    title: 'JavaScript essentials',
+    body:
+      'Get comfortable with all basic JavaScript concepts: variables, loops, arrays, branching, objects, functions, scopes, prototypes etc',
+    priority: PRIORITY_TYPES.HIGH,
+  },
+  {
+    id: 'id-2',
+    title: 'Refresh HTML and CSS',
+    body:
+      'Need to refresh HTML and CSS concepts, after learning some JavaScript. Maybe get to know CSS Grid and PostCSS, they seem to be trending.',
+    priority: PRIORITY_TYPES.NORMAL,
+  },
+  {
+    id: 'id-3',
+    title: 'Get comfy with Frontend frameworks',
+    body:
+      'First should get some general knowledge about frameworks, then maybe try each one for a week or so. Need to choose between React, Vue and Angular, by reading articles and watching videos.',
+    priority: PRIORITY_TYPES.NORMAL,
+  },
+  {
+    id: 'id-4',
+    title: 'Winter clothes',
+    body:
+      "Winter is coming! Need some really warm clothes: shoes, sweater, hat, jacket, scarf etc. Maybe should get a set of sportwear as well so I'll be able to do some excercises in the park.",
+    priority: PRIORITY_TYPES.LOW,
+  },
+];
+
+
+const notepad = new Notepad(initialNotes);
+console.log('Все текущие заметки: ', notepad.notes);
+
+let noteList = document.querySelector('.note-list');
+
+let noteItem = notepad.renderNoteList(null, notepad.notes);
+
