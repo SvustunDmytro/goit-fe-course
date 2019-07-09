@@ -173,6 +173,6 @@ const initialNotes = [
 const notepad = new Notepad(initialNotes);
 console.log('Все текущие заметки: ', notepad.notes);
 
-let noteList = document.querySelector('.note-list');
+const noteList = document.querySelector('.note-list');
 
-let noteItem = notepad.renderNoteList(noteList, notepad.notes);
+const noteItem = notepad.renderNoteList(noteList, notepad.notes);
