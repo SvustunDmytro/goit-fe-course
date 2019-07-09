@@ -131,14 +131,12 @@ class Notepad {
     icon.textContent = `${iconText}`;
     btn.append(icon);
     return btn;
-  }
+  };
   renderNoteList(listRef, notes) {
-    for (const note of notes) {
-      noteList.append(this.createListItem(note));
-    }
-    return noteList;
-  }
-}
+    let result = notes.map(note => this.createListItem(note));
+    listRef.append(...result);
+  };
+};
 
 const initialNotes = [
   {
@@ -177,5 +175,4 @@ console.log('Все текущие заметки: ', notepad.notes);
 
 let noteList = document.querySelector('.note-list');
 
-let noteItem = notepad.renderNoteList(null, notepad.notes);
-
+let noteItem = notepad.renderNoteList(noteList, notepad.notes);
