@@ -73,41 +73,41 @@ class Notepad {
     return newNotes;
   };
   createListItem(note) {
-    let noteOfNotes = note;
-    let el = document.createElement('li');
-    let noteWrapp = document.createElement('div');
-    let noteContent = this.createNoteContent(noteOfNotes);
-    let footer = this.createNoteFooter(noteOfNotes);
-    el.classList.add('note-list__item');
+    // let noteOfNotes = note;
+    const listItem = document.createElement('li');
+    const noteWrapp = document.createElement('div');
+    const noteContent = this.createNoteContent(note);
+    const footer = this.createNoteFooter(note);
+    listItem.classList.add('note-list__item');
     noteWrapp.classList.add('note');
-    el.setAttribute('data-id', noteOfNotes.id);
-    el.append(noteWrapp);
+    listItem.setAttribute('data-id', note.id);
+    listItem.append(noteWrapp);
     noteWrapp.append(noteContent);
     noteWrapp.append(footer);
-    return el;
+    return listItem;
   };
-  createNoteContent(noteOfNotes) {
-    let noteContent = document.createElement('div');
-    let noteTitle = document.createElement('h2');
-    let noteBody = document.createElement('p');
+  createNoteContent(note) {
+    const noteContent = document.createElement('div');
+    const noteTitle = document.createElement('h2');
+    const noteBody = document.createElement('p');
     noteContent.classList.add('note__content');
     noteTitle.classList.add('note__title');
     noteBody.classList.add('note__body');
-    noteTitle.textContent = `${noteOfNotes.title}`;
-    noteBody.textContent = `${noteOfNotes.body}`;
+    noteTitle.textContent = `${note.title}`;
+    noteBody.textContent = `${note.body}`;
     noteContent.append(noteTitle);
     noteContent.append(noteBody);
     return noteContent;
   };
   createNoteFooter(noteOfNotes) {
-    let footer = document.createElement('footer');
-    let noteSectionPriority = document.createElement('section');
-    let btnDecrease = this.createActionButton(ICON_TYPES.ARROW_DOWN, NOTE_ACTIONS.DECREASE_PRIORITY);
-    let btnIncrease = this.createActionButton(ICON_TYPES.ARROW_UP, NOTE_ACTIONS.INCREASE_PRIORITY);
-    let notePriority = document.createElement('span');
-    let noteSectionEdit = document.createElement('section');
-    let btnEdit = this.createActionButton(ICON_TYPES.EDIT, NOTE_ACTIONS.EDIT);
-    let btnDelete = this.createActionButton(ICON_TYPES.DELETE, NOTE_ACTIONS.DELETE);
+    const footer = document.createElement('footer');
+    const noteSectionPriority = document.createElement('section');
+    const btnDecrease = this.createActionButton(ICON_TYPES.ARROW_DOWN, NOTE_ACTIONS.DECREASE_PRIORITY);
+    const btnIncrease = this.createActionButton(ICON_TYPES.ARROW_UP, NOTE_ACTIONS.INCREASE_PRIORITY);
+    const notePriority = document.createElement('span');
+    const noteSectionEdit = document.createElement('section');
+    const btnEdit = this.createActionButton(ICON_TYPES.EDIT, NOTE_ACTIONS.EDIT);
+    const btnDelete = this.createActionButton(ICON_TYPES.DELETE, NOTE_ACTIONS.DELETE);
     footer.classList.add('note__footer');
     noteSectionPriority.classList.add('note__section');
     notePriority.classList.add('note__priority');
@@ -123,8 +123,8 @@ class Notepad {
     return footer;
   };
   createActionButton(iconText, noteAction) {
-    let btn = document.createElement('button');
-    let icon = document.createElement('i');
+    const btn = document.createElement('button');
+    const icon = document.createElement('i');
     btn.classList.add('action');
     icon.classList.add('material-icons', 'action__icon');
     btn.setAttribute('data-action', `${noteAction}`);
@@ -133,7 +133,7 @@ class Notepad {
     return btn;
   };
   renderNoteList(listRef, notes) {
-    let result = notes.map(note => this.createListItem(note));
+    const result = notes.map(note => this.createListItem(note));
     listRef.append(...result);
   };
 };
