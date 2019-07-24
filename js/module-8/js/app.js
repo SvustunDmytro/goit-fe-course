@@ -99,7 +99,7 @@ class Notepad {
     noteContent.append(noteBody);
     return noteContent;
   };
-  createNoteFooter(noteOfNotes) {
+  createNoteFooter(note) {
     const footer = document.createElement('footer');
     const noteSectionPriority = document.createElement('section');
     const btnDecrease = this.createActionButton(ICON_TYPES.ARROW_DOWN, NOTE_ACTIONS.DECREASE_PRIORITY);
@@ -112,7 +112,7 @@ class Notepad {
     noteSectionPriority.classList.add('note__section');
     notePriority.classList.add('note__priority');
     noteSectionEdit.classList.add('note__section');
-    notePriority.textContent = `${noteOfNotes.priority}`;
+    notePriority.textContent = `${note.priority}`;
     footer.append(noteSectionPriority);
     noteSectionPriority.append(btnDecrease);
     noteSectionPriority.append(btnIncrease);    
