@@ -1,12 +1,13 @@
 import { prototype } from "events";
 import { parsedItem } from "../app";
 import { listRef, renderNoteList } from './view';
+import { renderedNotes } from '../app';
 
 export default class Notepad {
     constructor(
         initialNotes
     ) {
-        this._notes = initialNotes;
+        this._notes = renderedNotes();
     }
 
     get notes() {

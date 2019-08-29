@@ -9,11 +9,17 @@ import { listRef, renderNoteList } from './utils/view';
 import Notepad from './utils/notepad-model';
 import initialNotes from '../assets/notes.json'
 const shortid = require('shortid');
-const notepad = new Notepad(initialNotes);
+const notepad = new Notepad(renderedNotes());
 const notyf = new Notyf();
 
 let notesFromLS = localStorage.getItem('notes');
 export let parsedItem = JSON.parse(notesFromLS);
+
+export function renderedNotes() {
+  if(parsedItem) {
+    return parsedItem;
+  } return initialNotes;
+}
 
 const addListItem = event => {
   event.preventDefault();
@@ -56,7 +62,7 @@ const openMicroModal = () => {
 
 
 console.log('Все текущие заметки: ', notepad.notes);
-renderNoteList(listRef, parsedItem);
+renderNoteList(listRef, renderedNotes());
 
 listRef.form.addEventListener('submit', addListItem);
 listRef.noteList.addEventListener('click', deleteListItem);
